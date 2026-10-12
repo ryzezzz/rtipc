@@ -20,5 +20,5 @@ static_assert((kCacheLine & (kCacheLine - 1)) == 0);
 #define MW_CACHE_ALIGNED alignas(::mw::kCacheLine)
 
 #define MW_REQUIRE_POW2(expr)                                           \
-    static_assert(::mw::is_power_of_two(static_cast<uint64_t>(expr)),   \
+    static_assert(::mw::is_power_of_two(static_cast<std::uint64_t>(expr)),   \
     #expr " must be a power of 2");

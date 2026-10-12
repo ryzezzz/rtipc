@@ -18,7 +18,7 @@ jobs:
           sudo apt-get install -y ninja-build libgtest-dev
 
       - name: 配置
-        run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+        run: CXX=g++-14 cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
 
       - name: 构建
         run: cmake --build build -j
